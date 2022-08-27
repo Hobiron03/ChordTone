@@ -188,6 +188,9 @@ module.exports = {
     },
     extend: {
       colors: mantineColors,
+      fontFamily: {
+        noto: ["Noto Sans JP"],
+      },
     },
   },
   plugins: [],

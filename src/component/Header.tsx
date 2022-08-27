@@ -25,7 +25,7 @@ const Header = () => {
   }, [opendDrawer]);
 
   return (
-    <div className="w-full">
+    <div className="w-full font-noto">
       <Drawer
         opened={opendDrawer}
         onClose={() => setOpenedDrawer(false)}

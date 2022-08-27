@@ -15,9 +15,8 @@ const Layout: FC<{ children: ReactNode; title: string }> = (props) => {
         />
       </Head>
 
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-col h-screen font-noto">
         <Header />
-
         <main className="flex-1 justify-center items-center">
           {props.children}
         </main>
