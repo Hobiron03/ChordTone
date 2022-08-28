@@ -4,7 +4,6 @@ import {
   Text,
   Drawer,
   useMantineColorScheme,
-  Footer,
 } from "@mantine/core";
 import {
   IconMenu2,

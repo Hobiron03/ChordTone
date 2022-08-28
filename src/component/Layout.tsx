@@ -1,10 +1,13 @@
 import Head from "next/head";
 import { ReactNode, FC } from "react";
+import { useMantineColorScheme } from "@mantine/core";
 
 import Header from "src/component/Header";
 import Footer from "src/component/Footer";
 
 const Layout: FC<{ children: ReactNode; title: string }> = (props) => {
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const dark = colorScheme === "dark";
   return (
     <>
       <Head>
@@ -17,7 +20,11 @@ const Layout: FC<{ children: ReactNode; title: string }> = (props) => {
 
       <div className="flex flex-col h-screen font-noto">
         <Header />
-        <main className="flex-1 justify-center items-center">
+        <main
+          className={`flex-1 justify-center items-cente ${
+            dark ? "bg-m_dark-11" : "bg-m_gray-10"
+          }`}
+        >
           {props.children}
         </main>
         <Footer />
