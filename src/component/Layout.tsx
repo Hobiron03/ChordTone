@@ -6,7 +6,7 @@ import Header from "src/component/Header";
 import Footer from "src/component/Footer";
 
 const Layout: FC<{ children: ReactNode; title: string }> = (props) => {
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const { colorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
   return (
     <>

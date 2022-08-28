@@ -1,10 +1,9 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
 import { useMediaQuery, useViewportSize } from "src/lib/mantine";
 
-import { Button } from "@mantine/core";
+import { Button, Container } from "@mantine/core";
 import Layout from "src/component/Layout";
+import InputChordCard from "src/page-component/home/InputChordCard";
 
 const Home: NextPage = () => {
   const { width } = useViewportSize();
@@ -19,8 +18,9 @@ const Home: NextPage = () => {
   };
 
   return (
-    <Layout title="index">
-      <div className="p-20">
+    <Layout title="Home">
+      <Container size="lg">
+        <InputChordCard />
         <div className="bg-fuchsia-200 xs:bg-red-200 sm:bg-amber-200 md:bg-lime-200 lg:bg-emerald-200 xl:bg-cyan-200">
           <div>{`width: ${width}`}</div>
           <div>{`largerThanXs: ${largerThanXs}`}</div>
@@ -32,7 +32,7 @@ const Home: NextPage = () => {
         <Button onClick={handleClick} className="mt-4 block">
           Click me!
         </Button>
-      </div>
+      </Container>
     </Layout>
   );
 };
