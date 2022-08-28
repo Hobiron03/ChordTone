@@ -11,6 +11,8 @@ const mantineColors = {
     7: "#1A1B1E",
     8: "#141517",
     9: "#101113",
+    10: "#282E33",
+    11: "#3A3B42",
   },
   m_gray: {
     0: "#F8F9FA",
@@ -23,6 +25,7 @@ const mantineColors = {
     7: "#495057",
     8: "#343A40",
     9: "#212529",
+    10: "#F3F3F3",
   },
   m_red: {
     0: "#FFF5F5",
@@ -185,6 +188,9 @@ module.exports = {
     },
     extend: {
       colors: mantineColors,
+      fontFamily: {
+        noto: ["Noto Sans JP"],
+      },
     },
   },
   plugins: [],
