@@ -1,13 +1,19 @@
 import {
-  Container,
   ActionIcon,
   Group,
   Text,
   Drawer,
-  CloseButton,
   useMantineColorScheme,
+  Footer,
 } from "@mantine/core";
-import { IconMenu2, IconSun, IconMoonStars } from "@tabler/icons";
+import {
+  IconMenu2,
+  IconSun,
+  IconMoonStars,
+  IconUsers,
+  IconHome,
+  IconMusic,
+} from "@tabler/icons";
 import Link from "next/link";
 import { useState } from "react";
 import { useCallback } from "react";
@@ -29,58 +35,38 @@ const Header = () => {
       <Drawer
         opened={opendDrawer}
         onClose={() => setOpenedDrawer(false)}
-        padding="xl"
-        size="full"
+        padding="md"
+        position="right"
+        overlayOpacity={0.15}
+        overlayBlur={2}
+        transition="rotate-left"
+        transitionDuration={250}
+        transitionTimingFunction="ease"
         styles={{
-          drawer: { backgroundColor: "#E64980" },
-          closeButton: {
-            display: "none",
-          },
+          drawer: { backgroundColor: dark ? "#3A3B42" : "#E7E5E5" },
         }}
       >
-        <CloseButton onClick={onClickToggleIconMenu} size="md" color="white" />
-        <div className="mt-100">
-          <Link href="/">
-            <Text
-              weight={700}
-              size={28}
-              color="white"
-              className={largerThanSm ? "text-white" : "text-red"}
-            >
-              <span className="mb-10">About</span>
-            </Text>
-          </Link>
-          <Link href="/blog-page">
-            <Text
-              weight={700}
-              size={28}
-              color="white"
-              className={largerThanSm ? undefined : "hidden"}
-            >
-              Blog
-            </Text>
-          </Link>
-          <Link href="/portfolio-page">
-            <Text
-              weight={700}
-              color="white"
-              size={28}
-              className={largerThanSm ? undefined : "hidden"}
-            >
-              Portfolio
-            </Text>
-          </Link>
-          <Link href="/contact-page">
-            <Text
-              weight={700}
-              size={28}
-              color="white"
-              className={largerThanSm ? undefined : "hidden"}
-            >
-              Contact
-            </Text>
-          </Link>
-        </div>
+        <Link href="/">
+          <Text weight={600} size={25}>
+            <IconHome size={20} />
+            Home
+          </Text>
+        </Link>
+        <Link href="/about-page">
+          <Text weight={600} size={25}>
+            <IconUsers size={20} />
+            About
+          </Text>
+        </Link>
+        <Link href="/skillcheck-page">
+          <Text weight={600} size={25}>
+            <IconMusic size={20} />
+            Skil Check
+          </Text>
+        </Link>
+        <Text weight={600} size={25} onClick={() => toggleColorScheme()}>
+          Dark Mode
+        </Text>
       </Drawer>
 
       <header
@@ -89,6 +75,76 @@ const Header = () => {
         }`}
       >
         <span className="h-full w-9/12 flex items-center justify-between">
+          <Group spacing="xl">
+            <Link href="/">
+              <Text weight={600} size={25}>
+                <span
+                  className={`cursor-pointer ${
+                    largerThanSm ? "mr-10" : undefined
+                  }`}
+                >
+                  Waon
+                </span>
+              </Text>
+            </Link>
+            <Link href="/about-page">
+              <div
+                className={
+                  largerThanSm
+                    ? `cursor-pointer flex items-center h-16 p-2 rounded-md ${
+                        dark ? "hover:bg-slate-900" : "hover:bg-slate-100"
+                      }`
+                    : "hidden"
+                }
+              >
+                <IconHome size={20} />
+                <Text weight={500} size="lg" className="ml-2">
+                  Home
+                </Text>
+              </div>
+            </Link>
+            <Link href="/about-page">
+              <div
+                className={
+                  largerThanSm
+                    ? `cursor-pointer flex items-center h-16 p-2 rounded-md ${
+                        dark ? "hover:bg-slate-900" : "hover:bg-slate-100"
+                      }`
+                    : "hidden"
+                }
+              >
+                <IconUsers size={20} />
+                <Text weight={500} size="lg" className="ml-2">
+                  About
+                </Text>
+              </div>
+            </Link>
+            <Link href="/skillcheck-page">
+              <div
+                className={
+                  largerThanSm
+                    ? `cursor-pointer h-16 flex items-center p-2 rounded-md ${
+                        dark ? "hover:bg-slate-900" : "hover:bg-slate-100"
+                      }`
+                    : "hidden"
+                }
+              >
+                <IconMusic size={20} />
+                <Text weight={500} size="lg" className="ml-2">
+                  Skiil check
+                </Text>
+              </div>
+            </Link>
+          </Group>
+
+          <ActionIcon
+            variant="outline"
+            color={dark ? "yellow" : "dark"}
+            onClick={() => toggleColorScheme()}
+            className={largerThanSm ? undefined : "hidden"}
+          >
+            {dark ? <IconSun size={18} /> : <IconMoonStars size={18} />}
+          </ActionIcon>
           <ActionIcon
             variant="light"
             className={largerThanSm ? "hidden" : undefined}
@@ -96,56 +152,6 @@ const Header = () => {
           >
             <IconMenu2 />
           </ActionIcon>
-
-          <Text
-            weight={700}
-            size="lg"
-            className={largerThanSm ? undefined : "m-auto"}
-          >
-            <Link href="/">
-              <span className="cursor-pointer">Waon</span>
-            </Link>
-          </Text>
-
-          <Group position="right" spacing="xl" align="center">
-            <Link href="/about-page">
-              <Text
-                weight={700}
-                size="lg"
-                color={dark ? "white" : "dark.5"}
-                className={largerThanSm ? "cursor-pointer" : "hidden"}
-              >
-                About
-              </Text>
-            </Link>
-            <Link href="/blog-page">
-              <Text
-                weight={700}
-                size="lg"
-                className={largerThanSm ? "cursor-pointer" : "hidden"}
-              >
-                Home
-              </Text>
-            </Link>
-            <Link href="/portfolio-page">
-              <Text
-                weight={700}
-                size="lg"
-                className={largerThanSm ? "cursor-pointer" : "hidden"}
-              >
-                Skill check
-              </Text>
-            </Link>
-
-            <ActionIcon
-              variant="outline"
-              color={dark ? "yellow" : "dark"}
-              onClick={() => toggleColorScheme()}
-            >
-              {/* <IconMoonStars size={18} /> */}
-              {dark ? <IconSun size={18} /> : <IconMoonStars size={18} />}
-            </ActionIcon>
-          </Group>
         </span>
       </header>
     </div>
