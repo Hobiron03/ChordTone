@@ -30,7 +30,7 @@ const Header = () => {
   }, [opendDrawer]);
 
   return (
-    <div className="w-full font-noto">
+    <div className="font-noto">
       <Drawer
         opened={opendDrawer}
         onClose={() => setOpenedDrawer(false)}
@@ -69,7 +69,7 @@ const Header = () => {
       </Drawer>
 
       <header
-        className={`flex justify-center w-full h-16 shadow  ${
+        className={`flex justify-center m-auto max-w-5xl h-16   ${
           dark ? "bg-m_dark-10" : "bg-m_white-10"
         }`}
       >
@@ -96,8 +96,8 @@ const Header = () => {
                     : "hidden"
                 }
               >
-                <IconHome size={20} />
-                <Text weight={500} size="lg" className="ml-2">
+                <IconHome size={18} />
+                <Text weight={500} size="md" className="ml-1">
                   Home
                 </Text>
               </div>
@@ -112,8 +112,8 @@ const Header = () => {
                     : "hidden"
                 }
               >
-                <IconUsers size={20} />
-                <Text weight={500} size="lg" className="ml-2">
+                <IconUsers size={18} />
+                <Text weight={500} size="md" className="ml-1">
                   About
                 </Text>
               </div>
@@ -128,8 +128,8 @@ const Header = () => {
                     : "hidden"
                 }
               >
-                <IconMusic size={20} />
-                <Text weight={500} size="lg" className="ml-2">
+                <IconMusic size={18} />
+                <Text weight={500} size="md" className="ml-1">
                   Skiil check
                 </Text>
               </div>
