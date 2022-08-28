@@ -49,7 +49,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-function NotFoundTitle() {
+const NotFoundTitle = () => {
   const { classes } = useStyles();
 
   return (
@@ -62,7 +62,8 @@ function NotFoundTitle() {
         align="center"
         className={classes.description}
       >
-        URL を間違えていないか確認してみてください。
+        ごめんなさい、ここは 404 ページです。URL
+        を間違えていないか確認してみてください。
       </Text>
       <Group position="center">
         <Link href="/">
@@ -73,6 +74,6 @@ function NotFoundTitle() {
       </Group>
     </Container>
   );
-}
+};
 
 export default NotFoundTitle;
