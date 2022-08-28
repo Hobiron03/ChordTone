@@ -38,7 +38,7 @@ export default function App(props: AppProps) {
           theme={{
             /** Put your mantine theme override here */
             colorScheme,
-            fontFamily: "Noto Sans JP, sa",
+            fontFamily: "Noto Sans JP",
             colors: {
               // override dark colors to change them for all components
               dark: [
