@@ -22,10 +22,6 @@ export default function App(props: AppProps) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
-        <link
-          href="https://fonts.googleapis.com/css?family=Noto+Sans+JP"
-          rel="stylesheet"
-        ></link>
       </Head>
 
       <ColorSchemeProvider
@@ -38,7 +34,7 @@ export default function App(props: AppProps) {
           theme={{
             /** Put your mantine theme override here */
             colorScheme,
-            fontFamily: "Noto Sans JP",
+            fontFamily: "Avenir Next",
             colors: {
               // override dark colors to change them for all components
               dark: [
