@@ -18,6 +18,7 @@ import { useState } from "react";
 import { useCallback } from "react";
 
 import { useMediaQuery } from "src/lib/mantine";
+import { DrowerContent } from "./DrowerContent";
 
 const Header = () => {
   const largerThanSm = useMediaQuery("sm");
@@ -30,7 +31,7 @@ const Header = () => {
   }, [opendDrawer]);
 
   return (
-    <div className="w-full font-noto">
+    <div className="font-noto">
       <Drawer
         opened={opendDrawer}
         onClose={() => setOpenedDrawer(false)}
@@ -45,31 +46,11 @@ const Header = () => {
           drawer: { backgroundColor: dark ? "#3A3B42" : "#E7E5E5" },
         }}
       >
-        <Link href="/">
-          <Text weight={600} size={25}>
-            <IconHome size={20} />
-            Home
-          </Text>
-        </Link>
-        <Link href="/about-page">
-          <Text weight={600} size={25}>
-            <IconUsers size={20} />
-            About
-          </Text>
-        </Link>
-        <Link href="/skillcheck-page">
-          <Text weight={600} size={25}>
-            <IconMusic size={20} />
-            Skil Check
-          </Text>
-        </Link>
-        <Text weight={600} size={25} onClick={() => toggleColorScheme()}>
-          Dark Mode
-        </Text>
+        <DrowerContent />
       </Drawer>
 
       <header
-        className={`flex justify-center w-full h-16 shadow  ${
+        className={`flex justify-center m-auto max-w-5xl h-16   ${
           dark ? "bg-m_dark-10" : "bg-m_white-10"
         }`}
       >
@@ -96,8 +77,8 @@ const Header = () => {
                     : "hidden"
                 }
               >
-                <IconHome size={20} />
-                <Text weight={500} size="lg" className="ml-2">
+                <IconHome size={18} />
+                <Text weight={500} size="md" className="ml-1">
                   Home
                 </Text>
               </div>
@@ -112,8 +93,8 @@ const Header = () => {
                     : "hidden"
                 }
               >
-                <IconUsers size={20} />
-                <Text weight={500} size="lg" className="ml-2">
+                <IconUsers size={18} />
+                <Text weight={500} size="md" className="ml-1">
                   About
                 </Text>
               </div>
@@ -128,8 +109,8 @@ const Header = () => {
                     : "hidden"
                 }
               >
-                <IconMusic size={20} />
-                <Text weight={500} size="lg" className="ml-2">
+                <IconMusic size={18} />
+                <Text weight={500} size="md" className="ml-1">
                   Skiil check
                 </Text>
               </div>

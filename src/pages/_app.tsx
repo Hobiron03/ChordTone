@@ -22,6 +22,10 @@ export default function App(props: AppProps) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
+        <link
+          href="https://fonts.googleapis.com/css?family=Noto+Sans+JP"
+          rel="stylesheet"
+        ></link>
       </Head>
 
       <ColorSchemeProvider
@@ -45,9 +49,9 @@ export default function App(props: AppProps) {
                 "#4d4f66",
                 "#34354a",
                 "#2b2c3d",
-                "#1d1e30",
-                "#0c0d21",
-                "#01010a",
+                "#282E33",
+                "#282E33",
+                "#3A3B42",
               ],
               darkMode: ["#212229", "#3A3B42"],
             },
