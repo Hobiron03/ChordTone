@@ -18,6 +18,7 @@ import { useState } from "react";
 import { useCallback } from "react";
 
 import { useMediaQuery } from "src/lib/mantine";
+import { DrowerContent } from "./DrowerContent";
 
 const Header = () => {
   const largerThanSm = useMediaQuery("sm");
@@ -45,27 +46,7 @@ const Header = () => {
           drawer: { backgroundColor: dark ? "#3A3B42" : "#E7E5E5" },
         }}
       >
-        <Link href="/">
-          <Text weight={600} size={25}>
-            <IconHome size={20} />
-            Home
-          </Text>
-        </Link>
-        <Link href="/about-page">
-          <Text weight={600} size={25}>
-            <IconUsers size={20} />
-            About
-          </Text>
-        </Link>
-        <Link href="/skillcheck-page">
-          <Text weight={600} size={25}>
-            <IconMusic size={20} />
-            Skil Check
-          </Text>
-        </Link>
-        <Text weight={600} size={25} onClick={() => toggleColorScheme()}>
-          Dark Mode
-        </Text>
+        <DrowerContent />
       </Drawer>
 
       <header
