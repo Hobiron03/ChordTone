@@ -12,7 +12,7 @@ export const DrowerContent = () => {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
   return (
-    <Box sx={{ width: 280 }}>
+    <Box sx={{ width: 250 }}>
       <Link href="/">
         <NavLink
           label="Home"
