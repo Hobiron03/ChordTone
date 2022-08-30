@@ -20,14 +20,12 @@ const InputChordCard = () => {
           <input
             type="text"
             placeholder="CM7"
-            className={`text-center w-60 h-full p-6 ${
+            className={`text-center w-64 h-full p-6 rounded border shadow border-gray-200  ${
               largerThanXs ? "text-7xl" : "text-5xl"
-            } border-none bg-red-400  ${
-              dark ? "bg-m_dark-10 text-gray-300" : "bg-white"
-            }`}
+            }  ${dark ? "bg-m_dark-10 text-gray-300" : "bg-white"}`}
           />
         </div>
-        <span className="flex justify-end">
+        <span className="flex justify-end mt-2">
           <Button
             size={`${largerThanXs ? "sm" : "xs"}`}
             color="dark"
