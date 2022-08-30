@@ -43,7 +43,7 @@ const Header = () => {
         transitionDuration={250}
         transitionTimingFunction="ease"
         styles={{
-          drawer: { backgroundColor: dark ? "#3A3B42" : "#E7E5E5" },
+          drawer: { backgroundColor: dark ? "#3A3B42" : "white" },
         }}
       >
         <DrowerContent />
