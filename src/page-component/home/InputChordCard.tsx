@@ -14,13 +14,13 @@ const InputChordCard = () => {
   }, []);
 
   return (
-    <div className="max-w-xl m-auto mt-2 ">
-      <Paper shadow="sm" radius="md" p="lg">
+    <div className="max-w-xl m-auto mt-2">
+      <Paper shadow="sm" radius="md" p="md">
         <div className="text-center ">
           <input
             type="text"
             placeholder="CM7"
-            className={`text-center w-64 h-full p-4 rounded border shadow   ${
+            className={`text-center w-64 h-full p-4 rounded border shadow ${
               largerThanXs ? "text-6xl" : "text-5xl"
             }  ${
               dark

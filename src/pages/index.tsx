@@ -4,6 +4,7 @@ import { Button, Container } from "@mantine/core";
 
 import Layout from "src/component/Layout";
 import InputChordCard from "src/page-component/home/InputChordCard";
+import SelectDiatonic from "src/page-component/home/SelectDiatonic";
 
 const Home: NextPage = () => {
   const { width } = useViewportSize();
@@ -21,7 +22,7 @@ const Home: NextPage = () => {
     <Layout title="Home">
       <Container size="md">
         <InputChordCard />
-        key
+        <SelectDiatonic />
       </Container>
     </Layout>
   );
