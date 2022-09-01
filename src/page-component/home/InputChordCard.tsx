@@ -21,7 +21,7 @@ const InputChordCard = () => {
             type="text"
             placeholder="CM7"
             className={`text-center w-64 h-full p-4 rounded border shadow   ${
-              largerThanXs ? "text-7xl" : "text-5xl"
+              largerThanXs ? "text-6xl" : "text-5xl"
             }  ${
               dark
                 ? "bg-m_dark-10 text-gray-300 border-gray-700"
