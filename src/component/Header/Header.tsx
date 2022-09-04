@@ -39,7 +39,7 @@ const Header = () => {
         position="right"
         overlayOpacity={0.15}
         overlayBlur={2}
-        transition="rotate-left"
+        transition="slide-left"
         transitionDuration={250}
         transitionTimingFunction="ease"
         styles={{
