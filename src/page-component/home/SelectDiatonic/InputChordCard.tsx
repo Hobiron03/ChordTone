@@ -34,7 +34,7 @@ const InputChordCard = () => {
             size={`${largerThanXs ? "sm" : "xs"}`}
             color="dark"
             radius="xl"
-            className={`${dark ? "bg-purple-600" : undefined}`}
+            className={`${dark ? "bg-indigo-700" : undefined}`}
           >
             <IconPlayerPlay size={14} />
             <span className="ml-1">Play</span>

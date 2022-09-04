@@ -1,4 +1,4 @@
-import { useMantineColorScheme } from "@mantine/core";
+import { useMantineColorScheme, Text } from "@mantine/core";
 import { useMediaQuery } from "src/lib/mantine";
 
 type Props = {};
@@ -11,7 +11,7 @@ const DegreeCard = (props: Props) => {
   const dark = colorScheme === "dark";
   return (
     <div
-      className={`cursor-pointer transition duration-200 rounded text-center ${
+      className={`cursor-pointer transition duration-200 rounded justify-center items-center ${
         largerThanXs
           ? "w-24 h-24 ml-4 mt-3"
           : largerThanSe
@@ -19,11 +19,22 @@ const DegreeCard = (props: Props) => {
           : "w-16 h-16 m-2"
       } ${
         dark
-          ? "bg-m_dark-10 border-m_dark-10 border-solid hover:hover:border-pink-100"
+          ? "bg-m_dark-10 border-m_dark-10 border-solid hover:border-indigo-600"
           : "bg-white shadow hover:shadow-lg "
       } `}
     >
-      CM7 IM7
+      <div className="h-full flex flex-col justify-center items-center">
+        <Text weight={600} size={largerThanSe ? 24 : 18}>
+          CM7
+        </Text>
+        <Text
+          weight={500}
+          size={largerThanSe ? 16 : 12}
+          className="mt-0 pt-0 text-gray-400"
+        >
+          IM7
+        </Text>
+      </div>
     </div>
   );
 };

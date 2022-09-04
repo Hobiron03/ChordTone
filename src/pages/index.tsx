@@ -3,8 +3,8 @@ import { useMediaQuery, useViewportSize } from "src/lib/mantine";
 import { Button, Container } from "@mantine/core";
 
 import Layout from "src/component/Layout";
-import InputChordCard from "src/page-component/home/InputChordCard";
-import SelectDiatonic from "src/page-component/home/SelectDiatonic";
+import InputChordCard from "src/page-component/home/SelectDiatonic/InputChordCard";
+import SelectDiatonic from "src/page-component/home/SelectDiatonic/SelectDiatonic";
 
 const Home: NextPage = () => {
   const { width } = useViewportSize();
