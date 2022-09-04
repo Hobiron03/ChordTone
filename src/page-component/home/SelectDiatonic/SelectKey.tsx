@@ -1,8 +1,18 @@
-import { Select, Text, useMantineColorScheme } from "@mantine/core";
+import { Select, useMantineColorScheme } from "@mantine/core";
+import { Key } from "@tonaljs/tonal";
+import { useEffect, useState } from "react";
 
 const SelectKey = () => {
   const { colorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
+
+  // redux-tool-kit にする
+  const [key, setKey] = useState<string | null>("C");
+
+  useEffect(() => {
+    console.log(key);
+  }, [key]);
+
   return (
     <div className="flex justify-center mb-4">
       <Select
@@ -37,6 +47,7 @@ const SelectKey = () => {
             backgroundColor: dark ? "#282E33" : undefined,
           },
         }}
+        onChange={setKey}
       />
     </div>
   );
