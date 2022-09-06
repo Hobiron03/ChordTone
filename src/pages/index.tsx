@@ -1,31 +1,13 @@
-import type { NextPage } from "next";
-import { useMediaQuery, useViewportSize } from "src/lib/mantine";
-import { Button, Container } from "@mantine/core";
+import { NextPage } from "next";
+import { Layout } from "src/component/Layout";
+import { Index } from "src/page-component/index/index";
 
-import Layout from "src/component/Layout";
-import InputChordCard from "src/page-component/home/SelectDiatonic/InputChordCard";
-import SelectDiatonic from "src/page-component/home/SelectDiatonic/SelectDiatonic";
-
-const Home: NextPage = () => {
-  const { width } = useViewportSize();
-  const largerThanXs = useMediaQuery("xs");
-  const largerThanSm = useMediaQuery("sm");
-  const largerThanMd = useMediaQuery("md");
-  const largerThanLg = useMediaQuery("lg");
-  const largerThanXl = useMediaQuery("xl");
-
-  const handleClick = () => {
-    console.log("Hello!");
-  };
-
+const IndexPage: NextPage = () => {
   return (
     <Layout title="Home">
-      <Container size="md">
-        <InputChordCard />
-        <SelectDiatonic />
-      </Container>
+      <Index />
     </Layout>
   );
 };
 
-export default Home;
+export default IndexPage;

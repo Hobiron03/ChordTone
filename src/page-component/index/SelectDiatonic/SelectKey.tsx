@@ -1,8 +1,9 @@
 import { Select, useMantineColorScheme } from "@mantine/core";
 import { Key } from "@tonaljs/tonal";
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
-const SelectKey = () => {
+/** @package */
+const SelectKey: FC = () => {
   const { colorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
 

@@ -1,9 +1,9 @@
 import { useMantineColorScheme, Text } from "@mantine/core";
+import { FC } from "react";
 import { useMediaQuery } from "src/lib/mantine";
 
-type Props = {};
-
-const DegreeCard = (props: Props) => {
+/** @package */
+const DegreeCard: FC = () => {
   const largerThanSe = useMediaQuery("se");
   const largerThanXs = useMediaQuery("xs");
 

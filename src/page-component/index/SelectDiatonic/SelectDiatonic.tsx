@@ -1,10 +1,10 @@
 import { useMantineColorScheme, Grid, Switch, Text } from "@mantine/core";
-import DegreeCard from "src/page-component/home/DegreeCard";
-import SelectKey from "src/page-component/home/SelectDiatonic/SelectKey";
+import { FC } from "react";
+import DegreeCard from "src/page-component/index/DegreeCard";
+import SelectKey from "src/page-component/index/SelectDiatonic/SelectKey";
 
-type Props = {};
-
-const SelectDiatonic = (props: Props) => {
+/** @package */
+export const SelectDiatonic: FC = () => {
   const { colorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
 
@@ -27,5 +27,3 @@ const SelectDiatonic = (props: Props) => {
     </div>
   );
 };
-
-export default SelectDiatonic;

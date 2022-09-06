@@ -1,10 +1,11 @@
 import { Paper, Button, useMantineColorScheme } from "@mantine/core";
 import { IconPlayerPlay } from "@tabler/icons";
-import { useCallback } from "react";
+import { FC, useCallback } from "react";
 
 import { useMediaQuery } from "src/lib/mantine/useMediaQuery";
 
-const InputChordCard = () => {
+/** @package */
+export const InputChordCard: FC = () => {
   const largerThanSm = useMediaQuery("sm");
   const largerThanXs = useMediaQuery("xs");
   const { colorScheme } = useMantineColorScheme();
@@ -44,5 +45,3 @@ const InputChordCard = () => {
     </div>
   );
 };
-
-export default InputChordCard;
