@@ -68,23 +68,23 @@ const Header = () => {
               </Text>
             </Link>
             <Link href="/about-page">
-              <div
+              <nav
                 className={
                   largerThanSm
-                    ? `cursor-pointer flex items-center h-16 p-2 rounded-md ${
+                    ? `cursor-pointer flex items-center h-16 p-2  rounded-md ${
                         dark ? "hover:bg-slate-900" : "hover:bg-slate-100"
                       }`
                     : "hidden"
                 }
               >
                 <IconHome size={18} />
-                <Text weight={500} size="md" className="ml-1">
+                <Text weight={500} size="md" className="ml-1 mt-1">
                   Home
                 </Text>
-              </div>
+              </nav>
             </Link>
             <Link href="/about-page">
-              <div
+              <nav
                 className={
                   largerThanSm
                     ? `cursor-pointer flex items-center h-16 p-2 rounded-md ${
@@ -94,13 +94,13 @@ const Header = () => {
                 }
               >
                 <IconUsers size={18} />
-                <Text weight={500} size="md" className="ml-1">
+                <Text weight={500} size="md" className="ml-1 mt-1">
                   About
                 </Text>
-              </div>
+              </nav>
             </Link>
             <Link href="/skillcheck-page">
-              <div
+              <nav
                 className={
                   largerThanSm
                     ? `cursor-pointer h-16 flex items-center p-2 rounded-md ${
@@ -110,10 +110,10 @@ const Header = () => {
                 }
               >
                 <IconMusic size={18} />
-                <Text weight={500} size="md" className="ml-1">
+                <Text weight={500} size="md" className="ml-1 mt-1">
                   Skiil check
                 </Text>
-              </div>
+              </nav>
             </Link>
           </Group>
 
