@@ -78,7 +78,7 @@ const Header = () => {
                 }
               >
                 <IconHome size={18} />
-                <Text weight={500} size="md" className="ml-1 mt-1">
+                <Text weight={500} size="md" className="ml-2 mt-1">
                   Home
                 </Text>
               </nav>
@@ -94,7 +94,7 @@ const Header = () => {
                 }
               >
                 <IconUsers size={18} />
-                <Text weight={500} size="md" className="ml-1 mt-1">
+                <Text weight={500} size="md" className="ml-2 mt-1">
                   About
                 </Text>
               </nav>
@@ -110,7 +110,7 @@ const Header = () => {
                 }
               >
                 <IconMusic size={18} />
-                <Text weight={500} size="md" className="ml-1 mt-1">
+                <Text weight={500} size="md" className="ml-2 mt-1">
                   Skiil check
                 </Text>
               </nav>
