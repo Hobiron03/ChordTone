@@ -1,6 +1,6 @@
 import { useMantineColorScheme, Grid, Switch, Text } from "@mantine/core";
 import { FC } from "react";
-import DegreeCard from "src/page-component/index/DegreeCard";
+import DegreeCard from "src/page-component/index/SelectDiatonic/DegreeCard";
 import SelectKey from "src/page-component/index/SelectDiatonic/SelectKey";
 
 /** @package */
@@ -19,10 +19,14 @@ export const SelectDiatonic: FC = () => {
           <Switch color={dark ? "indigo" : "dark"} />
         </div>
       </div>
-      <Grid justify="left" gutter={0}>
-        <Grid.Col span={3}>
-          <DegreeCard />
-        </Grid.Col>
+      <Grid justify="" gutter={0}>
+        {[...Array(7)].map((element, index) => {
+          return (
+            <Grid.Col key={index} span={3} className="flex justify-center">
+              <DegreeCard />
+            </Grid.Col>
+          );
+        })}
       </Grid>
     </div>
   );

@@ -11,7 +11,7 @@ const DegreeCard: FC = () => {
   const dark = colorScheme === "dark";
   return (
     <div
-      className={`cursor-pointer transition duration-200 rounded justify-center items-center ${
+      className={`flex cursor-pointer transition duration-200 rounded justify-center items-center ${
         largerThanXs
           ? "w-24 h-24 ml-4 mt-3"
           : largerThanSe

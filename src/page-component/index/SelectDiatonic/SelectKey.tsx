@@ -35,6 +35,22 @@ const SelectKey: FC = () => {
           { value: "A#", label: "Key = A#" },
           { value: "Bb", label: "Key = Bb" },
           { value: "B", label: "Key = B" },
+          { value: "Cbm", label: "Key = Cbm" },
+          { value: "Cm", label: "Key = Cm" },
+          { value: "C#m", label: "Key = C#m" },
+          { value: "Dbm", label: "Key = Dbm" },
+          { value: "Dm", label: "Key = Dm" },
+          { value: "D#m", label: "Key = D#m" },
+          { value: "Ebm", label: "Key = Ebm" },
+          { value: "Em", label: "Key = Em" },
+          { value: "Fm", label: "Key = Fm" },
+          { value: "F#m", label: "Key = F#m" },
+          { value: "Gm", label: "Key = Gm" },
+          { value: "G#m", label: "Key = G#m" },
+          { value: "Abm", label: "Key = Abm" },
+          { value: "A#m", label: "Key = A#m" },
+          { value: "Bbm", label: "Key = Bbm" },
+          { value: "Bm", label: "Key = Bm" },
         ]}
         className="w-28 h-4 border-0"
         styles={{
