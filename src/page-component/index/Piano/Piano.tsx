@@ -23,19 +23,17 @@ export const Piano: FC = () => {
           <WhiteKey />
           <BlackKey left={largerThanSm ? 315 : 270} />
           <WhiteKey />
-        </div>
-        <div className="flex relative">
           <WhiteKey />
-          <BlackKey left={largerThanSm ? 35 : 30} />
+          <BlackKey left={largerThanSm ? 428 : 367} />
           <WhiteKey />
-          <BlackKey left={largerThanSm ? 92 : 80} />
+          <BlackKey left={largerThanSm ? 485 : 416} />
           <WhiteKey />
           <WhiteKey />
-          <BlackKey left={largerThanSm ? 205 : 175} />
+          <BlackKey left={largerThanSm ? 595 : 512} />
           <WhiteKey />
-          <BlackKey left={largerThanSm ? 260 : 224} />
+          <BlackKey left={largerThanSm ? 652 : 560} />
           <WhiteKey />
-          <BlackKey left={largerThanSm ? 315 : 270} />
+          <BlackKey left={largerThanSm ? 706 : 607} />
           <WhiteKey />
         </div>
       </div>
