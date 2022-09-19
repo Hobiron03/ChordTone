@@ -7,8 +7,6 @@ type Props = {
   degree: string;
 };
 
-const degrees = ["I", "II", "III", "IV", "V", "VI", "VII"];
-
 /** @package */
 const DegreeCard: FC<Props> = (props) => {
   const largerThanSe = useMediaQuery("se");

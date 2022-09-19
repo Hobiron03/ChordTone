@@ -1,6 +1,6 @@
 import { useMantineColorScheme, Grid, Switch, Text } from "@mantine/core";
 import { FC, useState } from "react";
-import { Chord, Key } from "@tonaljs/tonal";
+import { Key } from "@tonaljs/tonal";
 
 import DegreeCard from "src/page-component/index/SelectDiatonic/DegreeCard";
 import SelectKey from "src/page-component/index/SelectDiatonic/SelectKey";
