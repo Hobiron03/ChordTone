@@ -20,7 +20,6 @@ export const InputChordCard: FC = () => {
 
   const handleOnClickPlayButton = useCallback(() => {
     console.log("handleOnClickPlayButton");
-    console.log(Chord.get("cM7"));
   }, []);
 
   const handleOnChangeChord = (e: ChangeEvent<HTMLInputElement>) => {

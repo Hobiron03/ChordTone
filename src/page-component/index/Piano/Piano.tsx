@@ -1,8 +1,8 @@
 import { ScrollArea } from "@mantine/core";
 import { FC } from "react";
 import { useMediaQuery } from "src/lib/mantine";
-import { BlackKey } from "./BlackKey";
-import { WhiteKey } from "./WhiteKey";
+import { BlackKey } from "src/page-component/index/Piano/BlackKey";
+import { WhiteKey } from "src/page-component/index/Piano/WhiteKey";
 
 /** @package */
 export const Piano: FC = () => {
