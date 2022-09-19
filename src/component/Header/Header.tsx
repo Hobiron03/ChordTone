@@ -20,7 +20,7 @@ import { useCallback } from "react";
 import { useMediaQuery } from "src/lib/mantine";
 import { DrowerContent } from "./DrowerContent";
 
-const Header = () => {
+export const Header = () => {
   const largerThanSm = useMediaQuery("sm");
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
@@ -137,5 +137,3 @@ const Header = () => {
     </div>
   );
 };
-
-export default Header;
