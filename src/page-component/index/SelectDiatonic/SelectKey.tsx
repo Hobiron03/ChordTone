@@ -1,18 +1,15 @@
 import { Select, useMantineColorScheme } from "@mantine/core";
 import { Key } from "@tonaljs/tonal";
-import { FC, useEffect, useState } from "react";
+import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
+
+type Props = {
+  setKey: Dispatch<SetStateAction<string>>;
+};
 
 /** @package */
-const SelectKey: FC = () => {
+const SelectKey: FC<Props> = (props) => {
   const { colorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
-
-  // redux-tool-kit にする
-  const [key, setKey] = useState<string | null>("C");
-
-  useEffect(() => {
-    console.log(key);
-  }, [key]);
 
   return (
     <div className="flex justify-center mb-4">
@@ -64,7 +61,7 @@ const SelectKey: FC = () => {
             backgroundColor: dark ? "#282E33" : undefined,
           },
         }}
-        onChange={setKey}
+        onChange={props.setKey}
       />
     </div>
   );
