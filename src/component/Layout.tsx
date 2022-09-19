@@ -2,8 +2,8 @@ import Head from "next/head";
 import { ReactNode, FC } from "react";
 import { useMantineColorScheme } from "@mantine/core";
 
-import Header from "src/component/Header/Header";
-import Footer from "src/component/Footer";
+import { Header } from "src/component/Header/Header";
+import { Footer } from "src/component/Footer";
 
 export const Layout: FC<{ children: ReactNode; title: string }> = (props) => {
   const { colorScheme } = useMantineColorScheme();
