@@ -2,6 +2,7 @@ import { useMediaQuery as useMediaQueryOriginal } from "@mantine/hooks";
 
 /* Mantineと一致させる: https://mantine.dev/theming/responsive */
 const map = {
+  se: "400px",
   xs: "576px",
   sm: "768px",
   md: "992px",

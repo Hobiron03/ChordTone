@@ -1,10 +1,11 @@
 import { Paper, Button, useMantineColorScheme } from "@mantine/core";
 import { IconPlayerPlay } from "@tabler/icons";
-import { useCallback } from "react";
+import { FC, useCallback } from "react";
 
 import { useMediaQuery } from "src/lib/mantine/useMediaQuery";
 
-const InputChordCard = () => {
+/** @package */
+export const InputChordCard: FC = () => {
   const largerThanSm = useMediaQuery("sm");
   const largerThanXs = useMediaQuery("xs");
   const { colorScheme } = useMantineColorScheme();
@@ -14,13 +15,13 @@ const InputChordCard = () => {
   }, []);
 
   return (
-    <div className="max-w-xl m-auto mt-2 ">
-      <Paper shadow="sm" radius="md" p="lg">
+    <div className="max-w-xl m-auto mt-2">
+      <Paper shadow="sm" radius="md" p="md">
         <div className="text-center ">
           <input
             type="text"
             placeholder="CM7"
-            className={`text-center w-64 h-full p-4 rounded border shadow   ${
+            className={`text-center w-64 h-full p-4 rounded border shadow ${
               largerThanXs ? "text-6xl" : "text-5xl"
             }  ${
               dark
@@ -34,7 +35,7 @@ const InputChordCard = () => {
             size={`${largerThanXs ? "sm" : "xs"}`}
             color="dark"
             radius="xl"
-            className={`${dark ? "bg-purple-600" : undefined}`}
+            className={`${dark ? "bg-indigo-700" : undefined}`}
           >
             <IconPlayerPlay size={14} />
             <span className="ml-1">Play</span>
@@ -44,5 +45,3 @@ const InputChordCard = () => {
     </div>
   );
 };
-
-export default InputChordCard;
