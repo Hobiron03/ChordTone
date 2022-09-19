@@ -7,7 +7,7 @@ type Props = {
   degree: number;
 };
 
-const degrees = ["IM7", "IIm7", "IIIm7", "IVM7", "V7", "VIm7", "VIIm7b5"];
+const degrees = ["I", "II", "III", "IV", "V", "VI", "VII"];
 
 /** @package */
 const DegreeCard: FC<Props> = (props) => {
@@ -39,7 +39,7 @@ const DegreeCard: FC<Props> = (props) => {
           size={largerThanSe ? 14 : 10}
           className="mt-0 pt-0 text-gray-400"
         >
-          {degrees[props.degree]}
+          {props.chord.replace(props.chord.slice(0, 1), degrees[props.degree])}
         </Text>
       </div>
     </div>

@@ -1,6 +1,5 @@
 import { Select, useMantineColorScheme } from "@mantine/core";
-import { Key } from "@tonaljs/tonal";
-import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, FC, SetStateAction } from "react";
 
 type Props = {
   setKey: Dispatch<SetStateAction<string>>;
@@ -10,6 +9,10 @@ type Props = {
 const SelectKey: FC<Props> = (props) => {
   const { colorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
+
+  const onKeyChange = (key: string): void => {
+    props.setKey(key);
+  };
 
   return (
     <div className="flex justify-center mb-4">
@@ -49,7 +52,7 @@ const SelectKey: FC<Props> = (props) => {
           { value: "Bbm", label: "Key = Bbm" },
           { value: "Bm", label: "Key = Bm" },
         ]}
-        className="w-28 h-4 border-0"
+        className="w-32 h-4 border-0"
         styles={{
           input: {
             border: "none",
@@ -61,7 +64,7 @@ const SelectKey: FC<Props> = (props) => {
             backgroundColor: dark ? "#282E33" : undefined,
           },
         }}
-        onChange={props.setKey}
+        onChange={onKeyChange}
       />
     </div>
   );

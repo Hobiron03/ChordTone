@@ -1,6 +1,6 @@
 import { useMantineColorScheme, Grid, Switch, Text } from "@mantine/core";
 import { FC, useState } from "react";
-import { Key } from "@tonaljs/tonal";
+import { Chord, Key } from "@tonaljs/tonal";
 
 import DegreeCard from "src/page-component/index/SelectDiatonic/DegreeCard";
 import SelectKey from "src/page-component/index/SelectDiatonic/SelectKey";
@@ -29,13 +29,27 @@ export const SelectDiatonic: FC = () => {
         </div>
       </div>
       <Grid gutter={0}>
-        {Key.majorKey(key).chords.map((chord, index) => {
-          return (
-            <Grid.Col key={index} span={3} className="flex justify-center">
-              <DegreeCard chord={chord} degree={index} />
-            </Grid.Col>
-          );
-        })}
+        {key.includes("m")
+          ? Key.minorKey(key.replace("m", "")).natural.chords.map(
+              (chord, index) => {
+                return (
+                  <Grid.Col
+                    key={index}
+                    span={3}
+                    className="flex justify-center"
+                  >
+                    <DegreeCard chord={chord} degree={index} />
+                  </Grid.Col>
+                );
+              }
+            )
+          : Key.majorKey(key).chords.map((chord, index) => {
+              return (
+                <Grid.Col key={index} span={3} className="flex justify-center">
+                  <DegreeCard chord={chord} degree={index} />
+                </Grid.Col>
+              );
+            })}
       </Grid>
     </div>
   );
