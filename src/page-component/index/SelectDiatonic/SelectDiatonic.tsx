@@ -13,10 +13,16 @@ export const SelectDiatonic: FC = () => {
       <div className="mt-5 mb-3 flex items-center justify-between">
         <SelectKey />
         <div className="flex">
-          <Text weight={600} className="mr-2">
-            Click Play
-          </Text>
-          <Switch color={dark ? "indigo" : "dark"} />
+          <label htmlFor="Click Play">
+            <Text weight={600} className="mr-2">
+              Click Play
+            </Text>
+          </label>
+          <Switch
+            color={dark ? "indigo" : "dark"}
+            id="Click Play"
+            aria-label="Click Play"
+          />
         </div>
       </div>
       <Grid justify="" gutter={0}>
