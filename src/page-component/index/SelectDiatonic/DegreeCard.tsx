@@ -1,6 +1,9 @@
 import { useMantineColorScheme, Text } from "@mantine/core";
-import { FC } from "react";
+import { FC, useCallback } from "react";
+import { useDispatch } from "react-redux";
+
 import { useMediaQuery } from "src/lib/mantine";
+import { setChord } from "src/state/selectChordSlice";
 
 type Props = {
   chord: string;
@@ -11,9 +14,14 @@ type Props = {
 const DegreeCard: FC<Props> = (props) => {
   const largerThanSe = useMediaQuery("se");
   const largerThanXs = useMediaQuery("xs");
-
   const { colorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
+  const dispatch = useDispatch();
+
+  const onDegreeCardClick = useCallback(() => {
+    dispatch(setChord(props.chord));
+  }, [props.chord]);
+
   return (
     <div
       className={`flex cursor-pointer transition duration-200 rounded justify-center items-center ${
@@ -27,6 +35,7 @@ const DegreeCard: FC<Props> = (props) => {
           ? "bg-m_dark-10 border-m_dark-10 border-solid hover:border-indigo-600"
           : "bg-white shadow hover:shadow-lg "
       } `}
+      onClick={onDegreeCardClick}
     >
       <div className="h-full flex flex-col justify-center items-center">
         <Text weight={600} size={largerThanXs ? 18 : largerThanSe ? 16 : 12}>

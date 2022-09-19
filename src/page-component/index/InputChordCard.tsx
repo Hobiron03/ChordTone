@@ -1,18 +1,45 @@
 import { Paper, Button, useMantineColorScheme } from "@mantine/core";
 import { IconPlayerPlay } from "@tabler/icons";
-import { FC, useCallback } from "react";
+import { ChangeEvent, FC, useCallback, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Chord } from "@tonaljs/tonal";
 
+import { selectChord, setChord } from "src/state/selectChordSlice";
 import { useMediaQuery } from "src/lib/mantine/useMediaQuery";
 
 /** @package */
 export const InputChordCard: FC = () => {
-  const largerThanSm = useMediaQuery("sm");
   const largerThanXs = useMediaQuery("xs");
   const { colorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
+  const chord = useSelector(selectChord);
+  const dispatch = useDispatch();
+
+  const [currentChord, setCurrentChord] = useState<string>("C");
+  const [isInputChord, setIsInputChord] = useState<boolean>(false);
+
   const handleOnClickPlayButton = useCallback(() => {
     console.log("handleOnClickPlayButton");
+    console.log(Chord.get("cM7"));
   }, []);
+
+  const handleOnChangeChord = (e: ChangeEvent<HTMLInputElement>) => {
+    setCurrentChord(e.target.value);
+  };
+
+  const handleOnFocus = () => {
+    setIsInputChord(true);
+  };
+
+  const handleOnBlur = () => {
+    const chordInfo = Chord.get(currentChord);
+    if (!chordInfo.empty) {
+      dispatch(setChord(currentChord));
+    } else {
+      setCurrentChord(chord);
+    }
+    setIsInputChord(false);
+  };
 
   return (
     <div className="max-w-xl m-auto mt-2">
@@ -20,9 +47,12 @@ export const InputChordCard: FC = () => {
         <div className="text-center ">
           <input
             type="text"
-            placeholder="CM7"
-            className={`text-center w-64 h-full p-4 rounded border shadow ${
-              largerThanXs ? "text-6xl" : "text-5xl"
+            value={isInputChord ? undefined : chord}
+            onBlur={handleOnBlur}
+            onFocus={handleOnFocus}
+            onChange={(e) => handleOnChangeChord(e)}
+            className={`text-center w-72 h-full p-4 rounded border shadow ${
+              largerThanXs ? "text-5xl" : "text-5xl"
             }  ${
               dark
                 ? "bg-m_dark-10 text-gray-300 border-gray-700"
@@ -36,6 +66,7 @@ export const InputChordCard: FC = () => {
             color="dark"
             radius="xl"
             className={`${dark ? "bg-indigo-700" : undefined}`}
+            onClick={handleOnClickPlayButton}
           >
             <IconPlayerPlay size={14} />
             <span className="ml-1">Play</span>
