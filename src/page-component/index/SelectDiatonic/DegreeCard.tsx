@@ -4,7 +4,7 @@ import { useMediaQuery } from "src/lib/mantine";
 
 type Props = {
   chord: string;
-  degree: number;
+  degree: string;
 };
 
 const degrees = ["I", "II", "III", "IV", "V", "VI", "VII"];
@@ -36,10 +36,11 @@ const DegreeCard: FC<Props> = (props) => {
         </Text>
         <Text
           weight={500}
-          size={largerThanSe ? 14 : 10}
+          size={largerThanSe ? 16 : 10}
           className="mt-0 pt-0 text-gray-400"
         >
-          {props.chord.replace(props.chord.slice(0, 1), degrees[props.degree])}
+          {/* {props.chord.replace(props.chord.slice(0, 1), degrees[props.degree])} */}
+          {props.degree}
         </Text>
       </div>
     </div>

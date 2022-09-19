@@ -38,7 +38,12 @@ export const SelectDiatonic: FC = () => {
                     span={3}
                     className="flex justify-center"
                   >
-                    <DegreeCard chord={chord} degree={index} />
+                    <DegreeCard
+                      chord={chord}
+                      degree={
+                        Key.minorKey(key.replace("m", "")).natural.grades[index]
+                      }
+                    />
                   </Grid.Col>
                 );
               }
@@ -46,7 +51,10 @@ export const SelectDiatonic: FC = () => {
           : Key.majorKey(key).chords.map((chord, index) => {
               return (
                 <Grid.Col key={index} span={3} className="flex justify-center">
-                  <DegreeCard chord={chord} degree={index} />
+                  <DegreeCard
+                    chord={chord}
+                    degree={Key.majorKey(key).grades[index]}
+                  />
                 </Grid.Col>
               );
             })}
