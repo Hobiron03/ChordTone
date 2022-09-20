@@ -21,7 +21,7 @@ export const Layout: FC<{ children: ReactNode; title: string }> = (props) => {
       <div className="flex flex-col h-screen font-noto ">
         <Header />
         <main
-          className={`flex-1 justify-center items-cente ${
+          className={`flex-1 pb-5 justify-center items-cente ${
             dark ? "bg-m_dark-11" : "bg-m_gray-10"
           }`}
         >
