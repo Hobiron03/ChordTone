@@ -6,7 +6,7 @@ type SelectChord = {
   chord: string;
 };
 const initialState: SelectChord = {
-  chord: "C",
+  chord: "",
 };
 
 export const selectChordSlice = createSlice({

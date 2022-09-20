@@ -50,6 +50,7 @@ export const InputChordCard: FC = () => {
         <div className="text-center ">
           <input
             type="text"
+            placeholder="Cmaj7"
             value={isInputChord ? undefined : chord}
             onBlur={handleOnBlur}
             onFocus={handleOnFocus}
