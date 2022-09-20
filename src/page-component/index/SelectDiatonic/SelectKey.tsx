@@ -1,5 +1,5 @@
 import { Select, useMantineColorScheme } from "@mantine/core";
-import { Dispatch, FC, SetStateAction } from "react";
+import type { Dispatch, FC, SetStateAction } from "react";
 
 type Props = {
   setKey: Dispatch<SetStateAction<string>>;

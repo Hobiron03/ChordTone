@@ -1,6 +1,6 @@
 import { Paper, Button, useMantineColorScheme } from "@mantine/core";
 import { IconPlayerPlay } from "@tabler/icons";
-import { ChangeEvent, FC, useCallback, useState } from "react";
+import { ChangeEvent, FC, useCallback, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Chord } from "@tonaljs/tonal";
 
@@ -17,6 +17,10 @@ export const InputChordCard: FC = () => {
 
   const [currentChord, setCurrentChord] = useState<string>("C");
   const [isInputChord, setIsInputChord] = useState<boolean>(false);
+
+  useEffect(() => {
+    setCurrentChord(chord);
+  }, [chord]);
 
   const handleOnClickPlayButton = useCallback(() => {
     console.log("handleOnClickPlayButton");
