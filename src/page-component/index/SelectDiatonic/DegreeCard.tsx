@@ -20,6 +20,7 @@ const DegreeCard: FC<Props> = (props) => {
 
   const onDegreeCardClick = useCallback(() => {
     dispatch(setChord(props.chord));
+    localStorage.setItem("chord", props.chord);
   }, [props.chord]);
 
   return (

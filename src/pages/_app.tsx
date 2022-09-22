@@ -6,14 +6,16 @@ import {
   ColorSchemeProvider,
   ColorScheme,
 } from "@mantine/core";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { store } from "src/store";
 import { Provider } from "react-redux";
+import { setChord } from "src/state/selectChordSlice";
 
 export default function App(props: AppProps) {
   const [colorScheme, setColorScheme] = useState<ColorScheme>("light");
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
+
   const { Component, pageProps } = props;
 
   return (

@@ -1,1 +1,1 @@
-export { SelectDiatonic } from "./SelectDiatonic";
+export { SelectDiatonic } from "./page";

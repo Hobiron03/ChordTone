@@ -8,6 +8,7 @@ type Props = {
   index: number;
 };
 
+/** @package */
 export const BlackKey: FC<Props> = (props: Props) => {
   const largerThanSm = useMediaQuery("sm");
   const { isChordTone } = useChordTones(props.index);

@@ -19,6 +19,10 @@ export const InputChordCard: FC = () => {
   const [isInputChord, setIsInputChord] = useState<boolean>(false);
 
   useEffect(() => {
+    dispatch(setChord(localStorage.getItem("chord")!));
+  }, []);
+
+  useEffect(() => {
     setCurrentChord(chord);
   }, [chord]);
 
@@ -28,6 +32,7 @@ export const InputChordCard: FC = () => {
 
   const handleOnChangeChord = (e: ChangeEvent<HTMLInputElement>) => {
     setCurrentChord(e.target.value);
+    localStorage.setItem("chord", e.target.value);
   };
 
   const handleOnFocus = () => {

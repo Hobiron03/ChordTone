@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
+
 import type { RootState } from "../store";
 
 type SelectChord = {
   chord: string;
 };
+
 const initialState: SelectChord = {
   chord: "",
 };

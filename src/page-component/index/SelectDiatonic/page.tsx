@@ -1,6 +1,7 @@
 import { useMantineColorScheme, Grid, Switch, Text } from "@mantine/core";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Key } from "@tonaljs/tonal";
+import { useLocalStorage } from "@mantine/hooks";
 
 import DegreeCard from "src/page-component/index/SelectDiatonic/DegreeCard";
 import SelectKey from "src/page-component/index/SelectDiatonic/SelectKey";
@@ -9,12 +10,13 @@ import SelectKey from "src/page-component/index/SelectDiatonic/SelectKey";
 export const SelectDiatonic: FC = () => {
   const { colorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
+
   const [key, setKey] = useState<string>("C");
 
   return (
     <div className="max-w-xl m-auto">
       <div className="mt-5 mb-3 flex items-center justify-between">
-        <SelectKey setKey={setKey} />
+        <SelectKey defaultKey={key} setKey={setKey} />
         <div className="flex">
           <label htmlFor="Click Play">
             <Text weight={600} className="mr-2">
