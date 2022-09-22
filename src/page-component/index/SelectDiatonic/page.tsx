@@ -16,7 +16,7 @@ export const SelectDiatonic: FC = () => {
   return (
     <div className="max-w-xl m-auto">
       <div className="mt-5 mb-3 flex items-center justify-between">
-        <SelectKey defaultKey={key} setKey={setKey} />
+        <SelectKey setKey={setKey} />
         <div className="flex">
           <label htmlFor="Click Play">
             <Text weight={600} className="mr-2">

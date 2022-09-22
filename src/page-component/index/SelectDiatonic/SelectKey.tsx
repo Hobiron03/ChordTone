@@ -4,7 +4,6 @@ import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
 
 type Props = {
   setKey: Dispatch<SetStateAction<string>>;
-  defaultKey: string;
 };
 
 /** @package */
@@ -12,15 +11,22 @@ const SelectKey: FC<Props> = (props) => {
   const { colorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
 
+  useEffect(() => {
+    onKeyChange(localStorage.getItem("key")!);
+  }, []);
+
   const onKeyChange = (key: string): void => {
     props.setKey(key);
+    localStorage.setItem("key", key);
   };
 
   return (
     <div className="flex justify-center mb-4">
       <Select
-        defaultValue={"C"}
+        searchable
+        defaultValue={"def"}
         data={[
+          { value: "def", label: "Select Key" },
           { value: "Cb", label: "Key = Cb" },
           { value: "C", label: "Key = C" },
           { value: "C#", label: "Key = C#" },
