@@ -12,7 +12,9 @@ const SelectKey: FC<Props> = (props) => {
   const dark = colorScheme === "dark";
 
   useEffect(() => {
-    onKeyChange(localStorage.getItem("key")!);
+    if (localStorage.getItem("key") != null) {
+      onKeyChange(localStorage.getItem("key")!);
+    }
   }, []);
 
   const onKeyChange = (key: string): void => {
