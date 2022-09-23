@@ -1,6 +1,5 @@
 import { Select, useMantineColorScheme } from "@mantine/core";
-import { useLocalStorage } from "@mantine/hooks";
-import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, FC, SetStateAction, useEffect } from "react";
 
 type Props = {
   setKey: Dispatch<SetStateAction<string>>;
@@ -28,7 +27,7 @@ const SelectKey: FC<Props> = (props) => {
         searchable
         defaultValue={"def"}
         data={[
-          { value: "def", label: "Select Key" },
+          { value: "def", label: "Key = " },
           { value: "Cb", label: "Key = Cb" },
           { value: "C", label: "Key = C" },
           { value: "C#", label: "Key = C#" },

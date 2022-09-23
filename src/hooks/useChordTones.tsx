@@ -6,28 +6,28 @@ import { selectChord } from "src/state/selectChordSlice";
 const notes = [
   ["C", "B#"],
   ["C#", "Db"],
-  ["D"],
+  ["D", "C##"],
   ["D#", "Eb"],
-  ["E"],
+  ["E", "D##"],
   ["F", "E#"],
   ["F#", "Gb"],
-  ["G"],
+  ["G", "F##"],
   ["G#", "Ab"],
-  ["A"],
+  ["A", "G##"],
   ["A#", "Bb"],
-  ["B"],
+  ["B", "A##"],
   ["C", "B#"],
   ["C#", "Db"],
-  ["D"],
+  ["D", "C##"],
   ["D#", "Eb"],
-  ["E"],
+  ["E", "D##"],
   ["F", "E#"],
   ["F#", "Gb"],
-  ["G"],
+  ["G", "F##"],
   ["G#", "Ab"],
-  ["A"],
+  ["A", "G##"],
   ["A#", "Bb"],
-  ["B"],
+  ["B", "A##"],
 ];
 
 export const useChordTones = (index: number) => {
@@ -61,5 +61,5 @@ export const useChordTones = (index: number) => {
     });
   }, [chord]);
 
-  return { isChordTone };
+  return { isChordTone, setIsChordTone };
 };
