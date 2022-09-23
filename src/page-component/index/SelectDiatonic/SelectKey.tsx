@@ -27,7 +27,7 @@ const SelectKey: FC<Props> = (props) => {
         searchable
         defaultValue={"def"}
         data={[
-          { value: "def", label: "Select Key" },
+          { value: "def", label: "Key = " },
           { value: "Cb", label: "Key = Cb" },
           { value: "C", label: "Key = C" },
           { value: "C#", label: "Key = C#" },
