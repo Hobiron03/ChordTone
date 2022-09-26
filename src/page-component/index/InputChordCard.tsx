@@ -23,6 +23,7 @@ export const InputChordCard: FC = () => {
   }, []);
 
   useEffect(() => {
+    // console.log(Chord.get(chord));
     setCurrentChord(chord);
   }, [chord]);
 

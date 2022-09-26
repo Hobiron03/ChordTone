@@ -47,6 +47,7 @@ export const BlackKey: FC<Props> = (props: Props) => {
       style={{ left: props.left }}
     >
       <Text className="text-sm text-m_dark-9 font-bold">{intreval}</Text>
+      {/* <Text className="pt-10 text-sm text-white font-bold">{props.notes}</Text> */}
     </div>
   );
 };

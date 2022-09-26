@@ -51,6 +51,9 @@ export const WhiteKey: FC<Props> = (props) => {
       }  border border-solid cursor-pointer`}
     >
       <Text className="pt-28 text-sm text-m_dark-9 font-bold">{intreval}</Text>
+      {/* <Text className="pt-28 text-sm text-m_dark-9 font-bold">
+        {props.notes}
+      </Text> */}
     </div>
   );
 };
