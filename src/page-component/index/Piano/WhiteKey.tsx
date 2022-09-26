@@ -42,7 +42,7 @@ export const WhiteKey: FC<Props> = (props) => {
     <div
       className={`flex justify-center items-center ${
         isChordTone
-          ? "bg-yellow-200 border-gray-300"
+          ? "bg-red-400 border-gray-300"
           : dark
           ? "bg-gray-300 border-gray-400"
           : "bg-white border-gray-300"
@@ -51,6 +51,9 @@ export const WhiteKey: FC<Props> = (props) => {
       }  border border-solid cursor-pointer`}
     >
       <Text className="pt-28 text-sm text-m_dark-9 font-bold">{intreval}</Text>
+      {/* <Text className="pt-28 text-sm text-m_dark-9 font-bold">
+        {props.notes}
+      </Text> */}
     </div>
   );
 };

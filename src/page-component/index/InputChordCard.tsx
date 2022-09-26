@@ -23,6 +23,7 @@ export const InputChordCard: FC = () => {
   }, []);
 
   useEffect(() => {
+    // console.log(Chord.get(chord));
     setCurrentChord(chord);
   }, [chord]);
 
@@ -74,7 +75,7 @@ export const InputChordCard: FC = () => {
             size={`${largerThanXs ? "sm" : "xs"}`}
             color="dark"
             radius="xl"
-            className={`${dark ? "bg-indigo-700" : undefined}`}
+            className={`${dark ? "bg-m_indigo-9" : undefined}`}
             onClick={handleOnClickPlayButton}
           >
             <IconPlayerPlay size={14} />

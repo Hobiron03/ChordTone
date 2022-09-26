@@ -23,7 +23,7 @@ export const SelectDiatonic: FC = () => {
             </Text>
           </label>
           <Switch
-            color={dark ? "indigo" : "dark"}
+            color={dark ? "indigo.9" : "dark"}
             id="Click Play"
             aria-label="Click Play"
           />
