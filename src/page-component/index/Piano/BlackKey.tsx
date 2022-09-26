@@ -40,10 +40,10 @@ export const BlackKey: FC<Props> = (props: Props) => {
   return (
     <div
       className={`flex justify-center items-center text-white ${
-        isChordTone ? "bg-yellow-200" : "bg-black"
+        isChordTone ? "bg-red-400" : "bg-black"
       } ${
         largerThanSm ? "w-10 h-28" : "w-8 h-24"
-      } border-2 border-solid border-gray-400 absolute cursor-pointer`}
+      } border border-solid border-gray-400 absolute cursor-pointer`}
       style={{ left: props.left }}
     >
       <Text className="text-sm text-m_dark-9 font-bold">{intreval}</Text>

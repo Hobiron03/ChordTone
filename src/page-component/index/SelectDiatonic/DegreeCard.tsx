@@ -33,7 +33,7 @@ const DegreeCard: FC<Props> = (props) => {
           : "w-16 h-16 m-2"
       } ${
         dark
-          ? "bg-m_dark-10 border-m_dark-10 border-solid hover:border-indigo-600"
+          ? "bg-m_dark-10 border-m_dark-10 border-solid hover:border-m_indigo-9"
           : "bg-white shadow hover:shadow-lg "
       } `}
       onClick={onDegreeCardClick}
