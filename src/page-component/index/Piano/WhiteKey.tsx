@@ -47,13 +47,16 @@ export const WhiteKey: FC<Props> = (props) => {
           ? "bg-gray-300 border-gray-400"
           : "bg-white border-gray-300"
       } ${
-        largerThanSm ? "w-14 h-44" : "w-12 h-40"
+        largerThanSm ? "w-14 h-44" : "w-10 h-36"
       }  border border-solid cursor-pointer`}
     >
-      <Text className="pt-28 text-sm text-m_dark-9 font-bold">{intreval}</Text>
-      {/* <Text className="pt-28 text-sm text-m_dark-9 font-bold">
-        {props.notes}
-      </Text> */}
+      {/* <div className={`flex flex-col pt-24 justify-center items-center`}>
+        <Text className="text-md text-m_dark-9 font-bold">
+          {props.notes[0]}
+        </Text>
+        <Text className="text-sm text-m_dark-9 font-bold">{intreval}</Text>
+      </div> */}
+      <Text className="text-sm pt-28 text-m_dark-9 font-bold">{intreval}</Text>
     </div>
   );
 };
