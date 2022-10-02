@@ -52,6 +52,7 @@ export const BlackKey: FC<Props> = (props: Props) => {
         }`}
       >
         <Text className="text-xs font-bold">{props.notes[0]}</Text>
+        <Text className="text-xs font-bold"></Text>
         <Text className="text-xs font-bold">{intreval}</Text>
       </div>
       {/* <Text className="text-sm text-m_dark-9 font-bold">{intreval}</Text> */}

@@ -8,14 +8,12 @@ import { useMediaQuery } from "src/lib/mantine";
 import { BlackKey } from "src/page-component/index/Piano/BlackKey";
 import { WhiteKey } from "src/page-component/index/Piano/WhiteKey";
 import { notes } from "src/hooks/useChordTones";
-import { Index } from "../page";
 
 /** @package */
 export const Piano: FC = () => {
   const largerThanSm = useMediaQuery("sm");
   const chord = useSelector(selectChord);
   const [_, setCurrentChord] = useState<string>("");
-  const [scrollPosition, onScrollPositionChange] = useState({ x: 0, y: 0 });
   const viewport = useRef<HTMLDivElement>(null);
 
   const scrollToRootNote = () => {
