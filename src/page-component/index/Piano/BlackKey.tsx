@@ -43,16 +43,20 @@ export const BlackKey: FC<Props> = (props: Props) => {
         isChordTone ? "bg-yellow-500" : "bg-black"
       } ${
         largerThanSm ? "w-10 h-28" : "w-7 h-20"
-      } border border-solid border-gray-400 absolute cursor-pointer`}
+      } border border-solid border-gray-400 absolute cursor-pointer `}
       style={{ left: props.left }}
     >
       <div
         className={`flex flex-col justify-center items-center ${
           isChordTone ? "text-m_dark-9" : "text-white"
-        }`}
+        } ${isChordTone ? undefined : "hidden"}`}
       >
-        <Text className="text-xs font-bold">{props.notes[0]}</Text>
-        <Text className="text-xs font-bold"></Text>
+        <Text className="font-bold" size={10}>
+          {props.notes[0]}
+        </Text>
+        <Text className=" font-bold" size={10}>
+          {props.notes[1]}
+        </Text>
         <Text className="text-xs font-bold">{intreval}</Text>
       </div>
       {/* <Text className="text-sm text-m_dark-9 font-bold">{intreval}</Text> */}
