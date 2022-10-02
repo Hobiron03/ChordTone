@@ -53,7 +53,7 @@ export const WhiteKey: FC<Props> = (props) => {
       <div
         className={`flex flex-col ${
           largerThanSm ? "pt-24" : "pt-16"
-        } justify-center items-center`}
+        } justify-center items-center ${isChordTone ? undefined : "hidden"}`}
       >
         <Text className="text-sm text-m_dark-9 font-bold">
           {props.notes[0]}
