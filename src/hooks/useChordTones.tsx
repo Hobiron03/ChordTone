@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { selectChord } from "src/state/selectChordSlice";
 
-const notes = [
+export const notes = [
   ["C", "B#"],
   ["C#", "Db"],
   ["D", "C##", "Ebb"],

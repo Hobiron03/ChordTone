@@ -1,11 +1,14 @@
 import { ScrollArea } from "@mantine/core";
 import { FC, useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
+import { Chord } from "@tonaljs/tonal";
 
 import { selectChord } from "src/state/selectChordSlice";
 import { useMediaQuery } from "src/lib/mantine";
 import { BlackKey } from "src/page-component/index/Piano/BlackKey";
 import { WhiteKey } from "src/page-component/index/Piano/WhiteKey";
+import { notes } from "src/hooks/useChordTones";
+import { Index } from "../page";
 
 /** @package */
 export const Piano: FC = () => {
@@ -15,11 +18,26 @@ export const Piano: FC = () => {
   const [scrollPosition, onScrollPositionChange] = useState({ x: 0, y: 0 });
   const viewport = useRef<HTMLDivElement>(null);
 
-  const scrollToBottom = () =>
+  const scrollToRootNote = () => {
+    let isDiscoverNote = false;
+    let rootNoteIndex = 0;
+
+    notes.forEach((note, index) => {
+      if (note.includes(Chord.get(chord).tonic!) && !isDiscoverNote) {
+        rootNoteIndex = index;
+        isDiscoverNote = true;
+      }
+    });
+
     viewport.current?.scrollTo({
-      left: viewport.current.scrollWidth,
+      left: rootNoteIndex * 2.0 * 8,
       behavior: "smooth",
     });
+  };
+
+  useEffect(() => {
+    scrollToRootNote();
+  }, [chord]);
 
   useEffect(() => {
     setCurrentChord(chord);
