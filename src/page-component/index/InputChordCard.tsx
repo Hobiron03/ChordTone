@@ -1,6 +1,7 @@
 import { Paper, Button, useMantineColorScheme } from "@mantine/core";
 import { IconPlayerPlay } from "@tabler/icons";
 import { ChangeEvent, FC, useCallback, useEffect, useState } from "react";
+import useSound from "use-sound";
 import { useSelector, useDispatch } from "react-redux";
 import { Chord } from "@tonaljs/tonal";
 
@@ -17,6 +18,7 @@ export const InputChordCard: FC = () => {
 
   const [currentChord, setCurrentChord] = useState<string>("C");
   const [isInputChord, setIsInputChord] = useState<boolean>(false);
+  const [play, { stop, pause }] = useSound("/sounds/C.m4a");
 
   useEffect(() => {
     dispatch(setChord(localStorage.getItem("chord")!));
@@ -28,8 +30,10 @@ export const InputChordCard: FC = () => {
   }, [chord]);
 
   const handleOnClickPlayButton = useCallback(() => {
-    console.log("handleOnClickPlayButton");
-  }, []);
+    console.log("Play");
+
+    play();
+  }, [play]);
 
   const handleOnChangeChord = (e: ChangeEvent<HTMLInputElement>) => {
     setCurrentChord(e.target.value);
@@ -51,7 +55,7 @@ export const InputChordCard: FC = () => {
   };
 
   return (
-    <div className="max-w-xl m-auto mt-2">
+    <div className="max-w-xl m-auto mt-4">
       <Paper shadow="sm" radius="md" p="md">
         <div className="text-center ">
           <input
