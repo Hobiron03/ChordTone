@@ -6,6 +6,7 @@ import { useMediaQuery } from "src/lib/mantine";
 import { setChord } from "src/state/selectChordSlice";
 
 type Props = {
+  onDegreeCardPlay: (chord: string) => void;
   chord: string;
   degree: string;
 };
@@ -18,10 +19,12 @@ const DegreeCard: FC<Props> = (props) => {
   const dark = colorScheme === "dark";
   const dispatch = useDispatch();
 
-  const onDegreeCardClick = useCallback(() => {
+  const onDegreeCardClick = () => {
     dispatch(setChord(props.chord));
     localStorage.setItem("chord", props.chord);
-  }, [props.chord]);
+    console.log(props.chord);
+    props.onDegreeCardPlay(props.chord);
+  };
 
   return (
     <div
