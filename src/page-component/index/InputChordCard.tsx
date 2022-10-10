@@ -25,12 +25,11 @@ export const InputChordCard: FC = () => {
   }, []);
 
   useEffect(() => {
-    console.log(Chord.get(chord));
     setCurrentChord(chord);
   }, [chord]);
 
   const handleOnClickPlayButton = () => {
-    soundChord();
+    soundChord(chord);
   };
 
   const handleOnChangeChord = (e: ChangeEvent<HTMLInputElement>) => {

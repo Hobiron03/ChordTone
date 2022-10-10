@@ -1,14 +1,8 @@
 import { Chord } from "@tonaljs/tonal";
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { selectChord } from "src/state/selectChordSlice";
 import useSound from "use-sound";
 import { notes } from "./useChordTones";
 
 export const useSoundChord = () => {
-  const chord = useSelector(selectChord);
-  const [chordToneFlags, setChordToneFlags] = useState<string[]>([""]);
-
   const [playC3] = useSound("/sounds/C3.wav");
   const [playC4] = useSound("/sounds/C4.wav");
   const [playCSharp3] = useSound("sounds/CSharp3.wav");
@@ -61,26 +55,25 @@ export const useSoundChord = () => {
     playB4,
   ];
 
-  useEffect(() => {
+  const createChordToneFlagsForCard = (chord: string): string[] => {
     let isDiscover = false;
+    let flags: string[] = [];
     notes.forEach((note, index) => {
       if (note.includes(Chord.get(chord).tonic!)) {
         if (!isDiscover) {
-          setChordToneFlags(
-            Array.from(
-              "0".repeat(index) +
-                Chord.get(chord).chroma +
-                "0".repeat(12 - index)
-            )
+          flags = Array.from(
+            "0".repeat(index) + Chord.get(chord).chroma + "0".repeat(12 - index)
           );
           isDiscover = true;
         }
       }
     });
-  }, [chord]);
+    return flags;
+  };
 
-  const soundChord = () => {
-    chordToneFlags.forEach((flag, index) => {
+  const soundChord = (chord: string) => {
+    const chordToneFlagsForCard: any = createChordToneFlagsForCard(chord);
+    chordToneFlagsForCard.forEach((flag: string, index: number) => {
       if (flag === "1") {
         noteSounds[index]();
         console.log(index);

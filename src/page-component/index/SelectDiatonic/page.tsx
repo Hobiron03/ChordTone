@@ -19,11 +19,9 @@ export const SelectDiatonic: FC = () => {
   const [key, setKey] = useState<string>("C");
   const [checked, setChecked] = useState(false);
 
-  const onDegreeCardClick = (): void => {};
-
-  useEffect(() => {
-    soundChord();
-  }, [chord]);
+  const onDegreeCardClick = (chord: string): void => {
+    soundChord(chord);
+  };
 
   return (
     <div className="max-w-xl m-auto">
