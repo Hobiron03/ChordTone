@@ -6,6 +6,7 @@ import { useMediaQuery } from "src/lib/mantine";
 import { setChord } from "src/state/selectChordSlice";
 
 type Props = {
+  onDegreeCardPlay: () => void;
   chord: string;
   degree: string;
 };

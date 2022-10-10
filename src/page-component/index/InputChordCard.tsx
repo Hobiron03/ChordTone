@@ -1,12 +1,12 @@
 import { Paper, Button, useMantineColorScheme } from "@mantine/core";
 import { IconPlayerPlay } from "@tabler/icons";
 import { ChangeEvent, FC, useCallback, useEffect, useState } from "react";
-import useSound from "use-sound";
 import { useSelector, useDispatch } from "react-redux";
 import { Chord } from "@tonaljs/tonal";
 
 import { selectChord, setChord } from "src/state/selectChordSlice";
 import { useMediaQuery } from "src/lib/mantine/useMediaQuery";
+import { useSoundChord } from "src/hooks/useSoundChord";
 
 /** @package */
 export const InputChordCard: FC = () => {
@@ -18,7 +18,7 @@ export const InputChordCard: FC = () => {
 
   const [currentChord, setCurrentChord] = useState<string>("C");
   const [isInputChord, setIsInputChord] = useState<boolean>(false);
-  const [play, { stop, pause }] = useSound("/sounds/C.m4a");
+  const { soundChord } = useSoundChord();
 
   useEffect(() => {
     dispatch(setChord(localStorage.getItem("chord")!));
@@ -29,11 +29,9 @@ export const InputChordCard: FC = () => {
     setCurrentChord(chord);
   }, [chord]);
 
-  const handleOnClickPlayButton = useCallback(() => {
-    console.log("Play");
-
-    play();
-  }, [play]);
+  const handleOnClickPlayButton = () => {
+    soundChord();
+  };
 
   const handleOnChangeChord = (e: ChangeEvent<HTMLInputElement>) => {
     setCurrentChord(e.target.value);

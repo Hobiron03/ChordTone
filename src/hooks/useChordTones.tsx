@@ -61,5 +61,5 @@ export const useChordTones = (index: number) => {
     });
   }, [chord]);
 
-  return { isChordTone, setIsChordTone };
+  return { isChordTone, setIsChordTone, chordToneFlags };
 };

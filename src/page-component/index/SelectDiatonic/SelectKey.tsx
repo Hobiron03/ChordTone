@@ -10,15 +10,8 @@ const SelectKey: FC<Props> = (props) => {
   const { colorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
 
-  // useEffect(() => {
-  //   if (localStorage.getItem("key") != null) {
-  //     onKeyChange(localStorage.getItem("key")!);
-  //   }
-  // }, []);
-
   const onKeyChange = (key: string): void => {
     props.setKey(key);
-    // localStorage.setItem("key", key);
   };
 
   return (
