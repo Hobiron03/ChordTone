@@ -20,7 +20,9 @@ export const SelectDiatonic: FC = () => {
   const [checked, setChecked] = useState(false);
 
   const onDegreeCardClick = (chord: string): void => {
-    soundChord(chord);
+    if (checked) {
+      soundChord(chord);
+    }
   };
 
   return (
@@ -30,7 +32,7 @@ export const SelectDiatonic: FC = () => {
         <div className="flex  items-center ">
           <label htmlFor="Click Play">
             <Text weight={600} className="mr-2">
-              On select card play
+              Play on select card
             </Text>
           </label>
           <Switch
