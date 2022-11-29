@@ -4,7 +4,7 @@ import { Index } from "src/page-component/index/index";
 
 const IndexPage: NextPage = () => {
   return (
-    <Layout title="Home">
+    <Layout title="Waon">
       <Index />
     </Layout>
   );

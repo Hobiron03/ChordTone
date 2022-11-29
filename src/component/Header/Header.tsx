@@ -14,7 +14,7 @@ import {
   IconMusic,
 } from "@tabler/icons";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCallback } from "react";
 
 import { useMediaQuery } from "src/lib/mantine";
@@ -29,6 +29,21 @@ export const Header = () => {
   const onClickToggleIconMenu = useCallback(() => {
     setOpenedDrawer(!opendDrawer);
   }, [opendDrawer]);
+
+  const handleOnClickToggleDarkMode = () => {
+    toggleColorScheme();
+    if (dark) {
+      localStorage.setItem("darkMode", "off");
+    } else {
+      localStorage.setItem("darkMode", "on");
+    }
+  };
+
+  useEffect(() => {
+    if (localStorage.getItem("darkMode") === "on") {
+      toggleColorScheme();
+    }
+  }, []);
 
   return (
     <div className="font-noto">
@@ -120,7 +135,7 @@ export const Header = () => {
           <ActionIcon
             variant="outline"
             color={dark ? "yellow" : "dark"}
-            onClick={() => toggleColorScheme()}
+            onClick={() => handleOnClickToggleDarkMode()}
             className={largerThanSm ? undefined : "hidden"}
           >
             {dark ? <IconSun size={18} /> : <IconMoonStars size={18} />}
