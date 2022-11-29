@@ -22,7 +22,6 @@ const DegreeCard: FC<Props> = (props) => {
   const onDegreeCardClick = () => {
     dispatch(setChord(props.chord));
     localStorage.setItem("chord", props.chord);
-    console.log(props.chord);
     props.onDegreeCardPlay(props.chord);
   };
 

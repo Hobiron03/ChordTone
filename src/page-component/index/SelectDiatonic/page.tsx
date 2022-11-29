@@ -32,7 +32,7 @@ export const SelectDiatonic: FC = () => {
         <div className="flex  items-center ">
           <label htmlFor="Click Play">
             <Text weight={600} className="mr-2">
-              Play on select card
+              Play on select chord
             </Text>
           </label>
           <Switch

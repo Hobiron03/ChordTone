@@ -76,7 +76,6 @@ export const useSoundChord = () => {
     chordToneFlagsForCard.forEach((flag: string, index: number) => {
       if (flag === "1") {
         noteSounds[index]();
-        console.log(index);
       }
     });
   };
