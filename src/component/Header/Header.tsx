@@ -61,7 +61,9 @@ export const Header = () => {
           drawer: { backgroundColor: dark ? "#3A3B42" : "white" },
         }}
       >
-        <DrowerContent />
+        <DrowerContent
+          handleOnClickToggleDarkMode={handleOnClickToggleDarkMode}
+        />
       </Drawer>
 
       <header

@@ -7,8 +7,13 @@ import {
   IconSun,
 } from "@tabler/icons";
 import Link from "next/link";
+import { FC } from "react";
 
-export const DrowerContent = () => {
+type Props = {
+  handleOnClickToggleDarkMode: () => void;
+};
+
+export const DrowerContent: FC<Props> = (props) => {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
   return (
@@ -49,7 +54,7 @@ export const DrowerContent = () => {
             <IconMoonStars size={20} stroke={1.5} />
           )
         }
-        onClick={() => toggleColorScheme()}
+        onClick={() => props.handleOnClickToggleDarkMode()}
         styles={{
           label: { fontSize: 20 },
         }}
