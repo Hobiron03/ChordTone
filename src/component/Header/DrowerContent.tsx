@@ -14,7 +14,7 @@ type Props = {
 };
 
 export const DrowerContent: FC<Props> = (props) => {
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const { colorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
   return (
     <Box sx={{ width: 250 }}>
