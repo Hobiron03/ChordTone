@@ -7,9 +7,14 @@ import {
   IconSun,
 } from "@tabler/icons";
 import Link from "next/link";
+import { FC } from "react";
 
-export const DrowerContent = () => {
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+type Props = {
+  handleOnClickToggleDarkMode: () => void;
+};
+
+export const DrowerContent: FC<Props> = (props) => {
+  const { colorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
   return (
     <Box sx={{ width: 250 }}>
@@ -22,7 +27,7 @@ export const DrowerContent = () => {
           }}
         />
       </Link>
-      <Link href="/about-page">
+      {/* <Link href="/about-page">
         <NavLink
           label="About"
           icon={<IconUsers size={20} stroke={1.5} />}
@@ -30,7 +35,7 @@ export const DrowerContent = () => {
             label: { fontSize: 20 },
           }}
         />
-      </Link>
+      </Link> */}
       <Link href="/skillcheck-page">
         <NavLink
           label="Skill check"
@@ -49,7 +54,7 @@ export const DrowerContent = () => {
             <IconMoonStars size={20} stroke={1.5} />
           )
         }
-        onClick={() => toggleColorScheme()}
+        onClick={() => props.handleOnClickToggleDarkMode()}
         styles={{
           label: { fontSize: 20 },
         }}

@@ -61,7 +61,9 @@ export const Header = () => {
           drawer: { backgroundColor: dark ? "#3A3B42" : "white" },
         }}
       >
-        <DrowerContent />
+        <DrowerContent
+          handleOnClickToggleDarkMode={handleOnClickToggleDarkMode}
+        />
       </Drawer>
 
       <header
@@ -82,7 +84,7 @@ export const Header = () => {
                 </span>
               </Text>
             </Link>
-            <Link href="/about-page">
+            <Link href="/">
               <nav
                 className={
                   largerThanSm
@@ -98,7 +100,7 @@ export const Header = () => {
                 </Text>
               </nav>
             </Link>
-            <Link href="/about-page">
+            {/* <Link href="/about-page">
               <nav
                 className={
                   largerThanSm
@@ -113,7 +115,7 @@ export const Header = () => {
                   About
                 </Text>
               </nav>
-            </Link>
+            </Link> */}
             <Link href="/skillcheck-page">
               <nav
                 className={
