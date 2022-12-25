@@ -62,8 +62,8 @@ const NotFoundTitle = () => {
         align="center"
         className={classes.description}
       >
-        ごめんなさい、ここは 404 ページです。URL
-        を間違えていないか確認してみてください。
+        ごめんなさい、ページが見つかりません。URL
+        が間違ってないか確認してみてください。
       </Text>
       <Group position="center">
         <Link href="/">
