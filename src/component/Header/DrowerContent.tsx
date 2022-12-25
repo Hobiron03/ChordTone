@@ -27,7 +27,7 @@ export const DrowerContent: FC<Props> = (props) => {
           }}
         />
       </Link>
-      <Link href="/about-page">
+      {/* <Link href="/about-page">
         <NavLink
           label="About"
           icon={<IconUsers size={20} stroke={1.5} />}
@@ -35,7 +35,7 @@ export const DrowerContent: FC<Props> = (props) => {
             label: { fontSize: 20 },
           }}
         />
-      </Link>
+      </Link> */}
       <Link href="/skillcheck-page">
         <NavLink
           label="Skill check"
