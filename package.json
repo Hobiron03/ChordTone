@@ -18,12 +18,14 @@
     "@reduxjs/toolkit": "^1.8.5",
     "@tabler/icons": "^1.88.0",
     "@tonaljs/tonal": "^4.6.5",
+    "@types/styled-components": "^5.1.26",
     "eslint-plugin-import-access": "^1.0.1",
     "gitmoji-cli": "^6.0.1",
     "next": "12.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-redux": "^8.0.2",
+    "styled-components": "^5.3.6",
     "use-sound": "^4.0.1"
   },
   "devDependencies": {
