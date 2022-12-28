@@ -11,6 +11,7 @@ import { FC } from "react";
 
 type Props = {
   handleOnClickToggleDarkMode: () => void;
+  checkDarkMode: () => void;
 };
 
 export const DrowerContent: FC<Props> = (props) => {
@@ -20,6 +21,7 @@ export const DrowerContent: FC<Props> = (props) => {
     <Box sx={{ width: 250 }}>
       <Link href="/">
         <NavLink
+          onClick={props.checkDarkMode}
           label="Home"
           icon={<IconHome2 size={20} stroke={1.5} />}
           styles={{
@@ -38,6 +40,7 @@ export const DrowerContent: FC<Props> = (props) => {
       </Link> */}
       <Link href="/skillcheck-page">
         <NavLink
+          onClick={props.checkDarkMode}
           label="Skill check"
           icon={<IconMusic size={20} stroke={1.5} />}
           styles={{
