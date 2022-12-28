@@ -40,10 +40,14 @@ export const Header = () => {
   };
 
   useEffect(() => {
+    checkDarkMode();
+  }, []);
+
+  const checkDarkMode = (): void => {
     if (localStorage.getItem("darkMode") === "on") {
       toggleColorScheme();
     }
-  }, []);
+  };
 
   return (
     <div className="font-noto">
@@ -63,6 +67,7 @@ export const Header = () => {
       >
         <DrowerContent
           handleOnClickToggleDarkMode={handleOnClickToggleDarkMode}
+          checkDarkMode={checkDarkMode}
         />
       </Drawer>
 
@@ -74,7 +79,7 @@ export const Header = () => {
         <span className="h-full w-9/12 flex items-center justify-between">
           <Group spacing="xl">
             <Link href="/">
-              <Text weight={600} size={25}>
+              <Text weight={600} size={25} onClick={checkDarkMode}>
                 <span
                   className={`cursor-pointer ${
                     largerThanSm ? "mr-10" : undefined
@@ -86,6 +91,7 @@ export const Header = () => {
             </Link>
             <Link href="/">
               <nav
+                onClick={() => checkDarkMode()}
                 className={
                   largerThanSm
                     ? `cursor-pointer flex items-center h-16 p-2  rounded-md ${
@@ -116,8 +122,9 @@ export const Header = () => {
                 </Text>
               </nav>
             </Link> */}
-            <Link href="/skillcheck-page">
+            <Link href="/skillcheck-page" onClick={() => checkDarkMode()}>
               <nav
+                onClick={() => checkDarkMode()}
                 className={
                   largerThanSm
                     ? `cursor-pointer h-16 flex items-center p-2 rounded-md ${
