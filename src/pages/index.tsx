@@ -4,7 +4,7 @@ import { Index } from "src/page-component/index/index";
 
 const IndexPage: NextPage = () => {
   return (
-    <Layout title="Tone - コードの和音（トーン）を調べられるサービス">
+    <Layout title="Chord Tone - コードの和音（トーン）を調べられるサービス">
       <Index />
     </Layout>
   );

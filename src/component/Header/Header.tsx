@@ -16,6 +16,7 @@ import {
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useCallback } from "react";
+import Image from "next/image";
 
 import { useMediaQuery } from "src/lib/mantine";
 import { DrowerContent } from "./DrowerContent";
@@ -85,7 +86,7 @@ export const Header = () => {
                     largerThanSm ? "mr-10" : undefined
                   }`}
                 >
-                  Waon
+                  Chord Tone
                 </span>
               </Text>
             </Link>
