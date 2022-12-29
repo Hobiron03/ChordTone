@@ -1,5 +1,6 @@
 .textWrapper {
-  animation: rotate 6s linear infinite alternate;
+  animation: rotate 7s linear infinite alternate;
+  transform: rotate(0);
 }
 
 .text {
@@ -9,7 +10,7 @@
 }
 
 @keyframes rotate {
-  0% {
+  50% {
     transform: rotate(5deg);
   }
 
