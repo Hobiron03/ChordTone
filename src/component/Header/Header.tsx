@@ -45,7 +45,7 @@ export const Header = () => {
   }, []);
 
   const checkDarkMode = (): void => {
-    if (localStorage.getItem("darkMode") === "on") {
+    if (localStorage.getItem("darkMode") === "on" && !dark) {
       toggleColorScheme();
     }
   };
