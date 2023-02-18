@@ -47,7 +47,7 @@ export const WhiteKey: FC<Props> = (props) => {
           ? "bg-gray-300 border-gray-400"
           : "bg-white border-gray-300"
       } ${
-        largerThanSm ? "w-14 h-44" : "w-10 h-36"
+        largerThanSm ? "w-14 h-44" : "w-10 h-40"
       }  border border-solid cursor-pointer`}
     >
       <div

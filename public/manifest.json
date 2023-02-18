@@ -1,10 +1,10 @@
 {
-    "theme_color": "#403f3f",
-    "background_color": "#f9f8f6",
+    "theme_color": "#2D2D2D",
+    "background_color": "#2D2D2D",
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "name": "ChordTonePWA",
+    "name": "ChortTone",
     "short_name": "ChordTone",
     "icons": [
         {
