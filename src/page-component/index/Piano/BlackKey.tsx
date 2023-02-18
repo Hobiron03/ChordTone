@@ -42,7 +42,7 @@ export const BlackKey: FC<Props> = (props: Props) => {
       className={`flex justify-center items-center text-white ${
         isChordTone ? "bg-yellow-500" : "bg-black"
       } ${
-        largerThanSm ? "w-10 h-28" : "w-7 h-20"
+        largerThanSm ? "w-10 h-28" : "w-7 h-24"
       } border border-solid border-gray-400 absolute cursor-pointer `}
       style={{ left: props.left }}
     >

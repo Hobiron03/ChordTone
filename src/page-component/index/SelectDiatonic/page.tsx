@@ -27,22 +27,23 @@ export const SelectDiatonic: FC = () => {
 
   return (
     <div className="max-w-xl m-auto">
-      <div className="mt-5 mb-3 flex items-center justify-between">
+      <div className="mt-10 mb-3 flex items-center justify-between">
         <SelectKey setKey={setKey} />
         <div className="flex  items-center ">
           <label htmlFor="Click Play">
             <Text weight={600} className="mr-2">
-              Play on select chord
+              Sound on select
             </Text>
           </label>
           <Switch
             color={dark ? "indigo.9" : "dark"}
+            size="lg"
             id="Click Play"
-            aria-label="Click Play"
+            aria-label="Sound when selecting chord card"
             checked={checked}
             onChange={(event) => setChecked(event.currentTarget.checked)}
-            onLabel={<IconMusic size={15} stroke={2} />}
-            offLabel={<IconMusicOff size={15} stroke={2} />}
+            onLabel={<IconMusic size={16} stroke={2} />}
+            offLabel={<IconMusicOff size={16} stroke={2} />}
           />
         </div>
       </div>
