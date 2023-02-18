@@ -26,6 +26,9 @@ export default function App(props: AppProps) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/icon-512x512.png"></link>
+        <meta name="theme-color" content="#fff" />
       </Head>
       <Provider store={store}>
         <ColorSchemeProvider
