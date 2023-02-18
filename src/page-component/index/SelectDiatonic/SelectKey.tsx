@@ -17,7 +17,6 @@ const SelectKey: FC<Props> = (props) => {
   return (
     <div className="flex justify-center mb-4">
       <Select
-        searchable
         defaultValue={"C"}
         data={[
           { value: "def", label: "Key = " },
